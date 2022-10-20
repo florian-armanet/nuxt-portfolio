@@ -1,0 +1,45 @@
+/*
+ * [ components / transition vue ]
+ */
+
+// -----------------------------------------------------------------------------
+
+/* purgecss start ignore */
+// 1. Simple fade
+// ----------------------------------------
+.Animation-fade-enter-active,
+.Animation-fade-leave-active {
+    transition: all 0.25s ease;
+}
+
+.Animation-fade-enter-from,
+.Animation-fade-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+// 2. Simple fade slowly
+// ----------------------------------------
+.Animation-fade-slow-enter-active,
+.Animation-fade-slow-leave-active {
+    transition: all 0.5s ease;
+}
+
+.Animation-fade-slow-enter-from,
+.Animation-fade-slow-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+// 3. Transform translateY
+// ----------------------------------------
+.Animation-translateY-enter-active,
+.Animation-translateY-leave-active {
+    transition: all 0.5s ease;
+}
+
+.Animation-translateY-enter-from,
+.Animation-translateY-leave-to {
+    transform: translateX(30px);
+}
+/* purgecss end ignore */

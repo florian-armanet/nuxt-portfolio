@@ -1,0 +1,38 @@
+/*
+ * [ components / border ]
+ */
+
+// -----------------------------------------------------------------------------
+
+.js-borders {
+    @apply relative;
+}
+
+.Border {
+    content: '';
+    @apply absolute bg-primary-base;
+
+    &--top {
+        @apply left-0 w-0;
+        top: -1px;
+        height: 2px;
+    }
+
+    &--right {
+        @apply top-0 h-0;
+        right: -1px;
+        width: 2px;
+    }
+
+    &--bottom {
+        @apply right-0 w-0;
+        bottom: -1px;
+        height: 2px;
+    }
+
+    &--left {
+        @apply bottom-0 h-0;
+        left: -1px;
+        width: 2px;
+    }
+}

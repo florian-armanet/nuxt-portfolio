@@ -1,0 +1,31 @@
+/*
+ * [ base / default ]
+ */
+
+// -----------------------------------------------------------------------------
+
+
+body,
+html {
+    min-width: 320px;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+}
+
+body {
+    min-height: 100vh;
+    font-family: theme('fontFamily.core');
+    background-color: theme('colors.secondary.base');
+    color: theme('colors.tertiary.base');
+}
+
+button:focus, input:focus, textarea:focus {
+    outline: none !important;
+}

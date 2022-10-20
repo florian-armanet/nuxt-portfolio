@@ -1,0 +1,16 @@
+/*
+ * [ components / button ]
+ */
+
+// -----------------------------------------------------------------------------
+
+
+@layer components {
+    .Button {
+        @apply rounded-3xl text-secondary-base font-bold bg-gradient-to-r from-primary-base to-primary-dark shadow-lg shadow-primary-base/50 text-xl py-3 px-6 transition-fast hover:shadow-md hover:shadow-sm;
+    }
+
+    .Button--small {
+        @apply py-2 px-4;
+    }
+}

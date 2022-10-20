@@ -1,0 +1,19 @@
+/*
+ * [ base / font ]
+ */
+
+// -----------------------------------------------------------------------------
+
+$fonts: (
+                ('Epilogue', 400, 'Regular'),
+                ('Epilogue', 700, 'Bold'),
+                ('Montserrat', 300, 'Light'),
+                ('Montserrat', 400, 'Regular'),
+                ('Montserrat', 700, 'Bold'),
+);
+
+@each $nameFont, $weight, $variant in $fonts {
+    @include fontFace($nameFont, $weight, $variant)
+}
+
+@include icomoon()

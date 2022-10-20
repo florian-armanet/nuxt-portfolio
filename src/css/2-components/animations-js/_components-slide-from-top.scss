@@ -1,0 +1,17 @@
+/*
+ * [ components / slide from top ]
+ */
+
+// -----------------------------------------------------------------------------
+
+.js-slide-from-top {
+    @screen lg {
+        transform: translateY(-50px);
+    }
+}
+
+.js-slide-from-bottom {
+    @screen lg {
+        transform: translateY(20px);
+    }
+}

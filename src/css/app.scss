@@ -1,0 +1,40 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import
+"0-settings/settings-functions",
+"0-settings/settings-icon",
+"0-settings/settings-mixins",
+"0-settings/settings-path",
+"0-settings/settings-utils"
+;
+
+@import
+"1-base/base-default",
+"1-base/base-font",
+"1-base/base-typography"
+;
+
+@import
+'2-components/animations-js/components-appear',
+'2-components/animations-js/components-appear-defer',
+'2-components/animations-js/components-appear-opacity',
+'2-components/animations-js/components-appear-sides',
+'2-components/animations-js/components-appear-stagger',
+'2-components/animations-js/components-border',
+'2-components/animations-js/components-slide-from-top',
+'2-components/animations-js/components-transition-vue',
+"2-components/components-buttons",
+"2-components/components-icon",
+"2-components/components-line",
+"2-components/components-loader",
+"2-components/components-menu",
+"2-components/components-scrollbar",
+"2-components/components-title"
+;
+
+@import
+'4-objects/objects-container',
+'4-objects/objects-grid'
+;

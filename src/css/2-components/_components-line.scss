@@ -1,0 +1,12 @@
+/*
+ * [ components / line ]
+ */
+
+// -----------------------------------------------------------------------------
+
+@layer components {
+    .Line {
+        @apply block sm-down:mt-2 sm:ml-8 bg-tertiary-hover w-full sm:w-56;
+        height: 1px;
+    }
+}

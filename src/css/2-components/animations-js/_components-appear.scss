@@ -1,0 +1,11 @@
+/*
+ * [ components / appear ]
+ */
+
+// -----------------------------------------------------------------------------
+
+.js-appear {
+    //@include translateYnoSpace(200px);
+    transform: translateY(100px);
+    @apply opacity-0;
+}

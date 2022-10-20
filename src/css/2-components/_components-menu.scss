@@ -1,0 +1,78 @@
+/*
+ * [ components / menu ]
+ */
+
+// -----------------------------------------------------------------------------
+
+@layer components {
+    .Menu {
+        @apply z-3 flex flex-col items-end cursor-pointer fixed top-4 right-4 lg:top-8 lg:right-8;
+        width: 40px;
+
+        &:not(.isActive):hover {
+            .Menu-line {
+                @apply w-full;
+            }
+        }
+    }
+
+    .Menu-line {
+        @apply bg-gradient-to-r from-primary-dark to-primary-base rounded transition-fast;
+        height: 4px;
+        margin: 4px 0;
+        transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+
+    .Menu-line:nth-of-type(1) {
+        width: 50%;
+    }
+
+    .Menu-line:nth-of-type(2) {
+        width: 100%;
+    }
+
+
+    .Menu-line:nth-of-type(3) {
+        width: 75%;
+    }
+
+    .Menu.isActive {
+        .Menu-line:nth-of-type(1) {
+            transform-origin: bottom;
+            transform: rotatez(45deg) translate(-8px, 14px);
+        }
+
+
+        .Menu-line:nth-of-type(2) {
+
+            transform-origin: top;
+            transform: rotatez(-45deg)
+        }
+
+
+        .Menu-line:nth-of-type(3) {
+            transform-origin: bottom;
+            width: 50%;
+            transform: translate(-2px, -6px) rotatez(45deg);
+        }
+    }
+
+    .Menu-content {
+        @apply z-2 flex-flow-center fixed inset-0 w-full h-full bg-secondary-base sm:bg-secondary-base/95 ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+
+        &:not(.isActive) {
+            @apply opacity-0 scale-0;
+        }
+    }
+
+    .Menu-items {
+        @apply flex flex-col items-start;
+    }
+
+    .Menu-item {
+        @apply cursor-pointer m-4 opacity-0 text-2xl sm:text-3xl lg:text-5xl font-bold tracking-wider;
+        transform: translateY(200px);
+    }
+}

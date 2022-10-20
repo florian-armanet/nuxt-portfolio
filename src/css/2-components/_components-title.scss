@@ -1,0 +1,23 @@
+/*
+ * [ components / title ]
+ */
+
+// -----------------------------------------------------------------------------
+
+@layer components {
+    .Title {
+        @apply relative text-2xl lg:text-6xl text-tertiary-base;
+
+        &--big {
+            @apply text-2xl lg:text-8xl;
+        }
+
+        &--6xl {
+            @apply text-2xl lg:text-6xl;
+        }
+
+        &--2xl {
+            @apply text-xl lg:text-2xl;
+        }
+    }
+}
