@@ -147,6 +147,10 @@
         margin-left: calc(-50vw + 50%);
     }
 
+    .text-gradient-primary {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light via-primary-base to-primary-dark;
+    }
+
     $colors: (
             'white': theme('colors.white'),
             'black': theme('colors.black'),
