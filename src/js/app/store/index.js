@@ -2,7 +2,6 @@ import translations from './translations'
 import introduction from './introduction'
 import skills from './skills'
 import tools from './tools'
-import loaders from './loaders'
 import sections from './sections'
 import realisations from './realisations'
 import experiences from './experiences'
@@ -14,7 +13,6 @@ export default {
     introduction,
     skills,
     tools,
-    loaders,
     sections,
     realisations,
     experiences,

@@ -16,19 +16,17 @@
     </header>
 </template>
 
-<script>
+<script setup>
 import useStore from '../store'
+import { API_URL } from '../api/api'
 
-export default {
-    name: 'Header',
-    setup () {
-        const { getDataIntroduction } = useStore.introduction()
-        const { getSectionsCode }                            = useStore.sections()
+const { fetchDataIntroduction, getDataIntroduction } = useStore.introduction()
+const { getSectionsCode }     = useStore.sections()
 
-        return {
-            getDataIntroduction,
-            getSectionsCode,
-        }
-    }
-}
+await useAsyncData(
+    'introduction',
+    () => $fetch(API_URL + 'introduction')
+).then(res => {
+    fetchDataIntroduction(res.data.value.data.attributes)
+})
 </script>

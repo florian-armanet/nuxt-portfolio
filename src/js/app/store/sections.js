@@ -1,20 +1,16 @@
 import { computed, reactive } from 'vue'
-import { ApiFetchDataSections } from '../api/api'
-import useStore from './index'
 
 const state = reactive({
     dataSections: []
 })
 
 export default () => {
-    const { addLoaders } = useStore.loaders()
-
-    const fetchDataSections = () => ApiFetchDataSections()
-        .then((data) => {
-            state.dataSections = [...data]
-            // addLoaders({ code: 'sections' })
-        })
-        .catch(err => console.log(err))
+    /**
+     *
+     * @param sections
+     * @returns {*[]}
+     */
+    const fetchDataSections = (sections = []) => state.dataSections = sections
 
     /**
      *

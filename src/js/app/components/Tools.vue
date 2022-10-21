@@ -11,17 +11,16 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import useStore from '../store'
+import { API_URL } from '../api/api'
 
-export default {
-    name: 'Tools',
-    setup () {
-        const { getDataTools } = useStore.tools()
+const { fetchDataTools, getDataTools } = useStore.tools()
 
-        return {
-            getDataTools,
-        }
-    }
-}
+await useAsyncData(
+    'tool',
+    () => $fetch(API_URL + 'tool')
+).then(res => {
+    fetchDataTools(res.data.value.data.attributes)
+})
 </script>

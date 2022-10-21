@@ -32,78 +32,64 @@
     </nav>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import useStore from '../store/index'
 import { gsap } from 'gsap'
 
-export default {
-    name: 'Menu',
-    setup () {
-        const { getDataSections } = useStore.sections()
-        const { getPdfObject } = useStore.about()
+const { getDataSections } = useStore.sections()
 
-        const menuIsActive = ref(false)
-        const tl           = gsap.timeline({ paused: true })
+const menuIsActive = ref(false)
+const tl           = gsap.timeline({ paused: true })
 
-        /**
-         *
-         * @param tl
-         * @param target
-         */
-        const gsapMenuItem = (tl, target) => {
-            tl.to(target, {
-                duration: 0.5,
-                stagger: 0.1,
-                transform: 'translateY(0)',
-                ease: 'Power2.easeOut',
-                opacity: 1,
-            }, '<0.5')
-        }
+/**
+ *
+ * @param tl
+ * @param target
+ */
+const gsapMenuItem = (tl, target) => {
+    tl.to(target, {
+        duration: 0.5,
+        stagger: 0.1,
+        transform: 'translateY(0)',
+        ease: 'Power2.easeOut',
+        opacity: 1,
+    }, '<0.5')
+}
 
-        /**
-         *
-         * @param event
-         */
-        const onClickMenu = (event) => {
-            document.body.parentNode.classList.toggle('overflow-hidden')
+/**
+ *
+ * @param event
+ */
+const onClickMenu = (event) => {
+    document.body.parentNode.classList.toggle('overflow-hidden')
 
-            if (!menuIsActive.value) {
-                const menuItems = document.querySelectorAll(`.gsap-menu-item`)
+    if (!menuIsActive.value) {
+        const menuItems = document.querySelectorAll(`.gsap-menu-item`)
 
-                gsapMenuItem(tl, menuItems)
+        gsapMenuItem(tl, menuItems)
 
-                menuIsActive.value = true
+        menuIsActive.value = true
 
-                tl.timeScale(1).play()
+        tl.timeScale(1).play()
 
-                return
-            }
-
-            tl.timeScale(3).reverse()
-
-            tl.eventCallback('onReverseComplete', () => {
-                menuIsActive.value = false
-            })
-        }
-
-        const onClickMenuItem = (event) => {
-            document.body.parentNode.classList.toggle('overflow-hidden')
-
-            tl.timeScale(4).reverse()
-
-            tl.eventCallback('onReverseComplete', () => {
-                menuIsActive.value = false
-            })
-        }
-
-        return {
-            getDataSections,
-            menuIsActive,
-            onClickMenu,
-            onClickMenuItem,
-            getPdfObject,
-        }
+        return
     }
+
+    tl.timeScale(3).reverse()
+
+    tl.eventCallback('onReverseComplete', () => {
+        menuIsActive.value = false
+    })
+}
+
+const onClickMenuItem = (event) => {
+    document.body.parentNode.classList.toggle('overflow-hidden')
+
+    tl.timeScale(4).reverse()
+
+    tl.eventCallback('onReverseComplete', () => {
+        menuIsActive.value = false
+    })
 }
 </script>

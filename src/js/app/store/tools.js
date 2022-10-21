@@ -1,22 +1,16 @@
-import { ref, computed } from 'vue'
-import { ApiFetchDataTools } from '../api/api'
-import useStore from './index'
+import { computed, ref } from 'vue'
 
 const state = ref({
     dataTools: {}
 })
 
 export default () => {
-    const { addLoaders } = useStore.loaders()
-
-    const fetchDataTools = () => ApiFetchDataTools()
-        .then((data) => {
-            state.value.dataTools = { ...data }
-            addLoaders({
-                code: 'tools'
-            })
-        })
-        .catch(err => console.log(err))
+    /**
+     *
+     * @param tools
+     * @returns {{}}
+     */
+    const fetchDataTools = (tools = {}) => state.value.dataTools = tools
 
     /**
      *

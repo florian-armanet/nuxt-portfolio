@@ -43,58 +43,56 @@
     </div>
 </template>
 
-<script>
-import { ref, computed, onMounted } from 'vue'
+<script setup>
+import { ref } from 'vue'
 import gsap from 'gsap'
 import useStore from '../store'
+import { API_URL } from '../api/api'
 
-export default {
-    name: 'Experiences',
-    setup () {
-        const {
-                  getDataExperiences,
-                  getCurrentExperience,
-                  getCurrentPosition,
-                  setCurrentPosition,
-                  getSectionExperiences,
-              } = useStore.experiences()
+const {
+          fetchDataExperiences,
+          getDataExperiences,
+          getCurrentExperience,
+          getCurrentPosition,
+          setCurrentPosition,
+          getSectionExperiences,
+      } = useStore.experiences()
 
-        const currentExperienceContent = ref('')
+const currentExperienceContent = ref('')
 
-        /**
-         *
-         * @param event
-         * @param position
-         */
-        const onClickItem = (event, position) => {
-            if (position === getCurrentPosition.value || !currentExperienceContent.value) return
+/**
+ *
+ * @param event
+ * @param position
+ */
+const onClickItem = (event, position) => {
+    if (position === getCurrentPosition.value || !currentExperienceContent.value) return
 
-            const tl = gsap.timeline({ paused: true })
+    const tl = gsap.timeline({ paused: true })
 
-            const updatePosition = () => setCurrentPosition(position)
+    const updatePosition = () => setCurrentPosition(position)
 
-            tl.to(currentExperienceContent.value, {
-                opacity: 0,
-                duration: 0.25,
-                onComplete: updatePosition,
-            })
+    tl.to(currentExperienceContent.value, {
+        opacity: 0,
+        duration: 0.25,
+        onComplete: updatePosition,
+    })
 
-            tl.to(currentExperienceContent.value, {
-                opacity: 1,
-                duration: 0.15,
-            })
+    tl.to(currentExperienceContent.value, {
+        opacity: 1,
+        duration: 0.15,
+    })
 
-            tl.play()
-        }
-
-        return {
-            getDataExperiences,
-            getCurrentPosition,
-            getCurrentExperience,
-            currentExperienceContent,
-            onClickItem,
-            getSectionExperiences,
-        }
-    }
+    tl.play()
 }
+
+await useAsyncData(
+    'experiences',
+    () => $fetch(API_URL + 'experiences')
+).then(res => {
+    const data = res.data.value.data
+        .map(({ attributes }) => attributes)
+        .sort((a, b) => a.position - b.position)
+    fetchDataExperiences(data)
+})
 </script>

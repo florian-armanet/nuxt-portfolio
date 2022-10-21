@@ -1,5 +1,4 @@
-import { ref, computed } from 'vue'
-import { ApiFetchDataContact } from '../api/api'
+import { computed, ref } from 'vue'
 import useStore from './index'
 
 const state = ref({
@@ -7,15 +6,14 @@ const state = ref({
 })
 
 export default () => {
-    const { addLoaders }       = useStore.loaders()
     const { getSectionByCode } = useStore.sections()
 
-    const fetchDataContact = () => ApiFetchDataContact()
-        .then((data) => {
-            state.value.dataContact = { ...data }
-            addLoaders(getSectionContact.value)
-        })
-        .catch(err => console.log(err))
+    /**
+     *
+     * @param contact
+     * @returns {{}}
+     */
+    const fetchDataContact = (contact = {}) => state.dataContact = contact
 
     /**
      *

@@ -43,73 +43,68 @@
     </div>
 </template>
 
-<script>
-import { ref, onUpdated } from 'vue'
+<script setup>
+import { onUpdated, ref } from 'vue'
 import useStore from '../../store'
 import Appear from '../../../../../plugins/animations/appear'
 import SlideFromTop from '../../../../../plugins/animations/slide-from-top'
 import { positionY } from '../../../../../plugins/common/utils/positionY'
 import Realisation from './Realisation.vue'
+import { API_URL } from '../../api/api'
 
-export default {
-    name: 'Realisations',
-    components: { Realisation },
-    setup () {
-        const {
-                  getDataRealisationsLimited,
-                  getSectionRealisations,
-                  getLimit,
-                  limitUp,
-                  limitDown
-              } = useStore.realisations()
+const {
+          fetchDataRealisations,
+          getDataRealisationsLimited,
+          getSectionRealisations,
+          getLimit,
+          limitUp,
+          limitDown
+      } = useStore.realisations()
 
-        const { getDataTranslations } = useStore.translations()
+const { getDataTranslations } = useStore.translations()
 
-        const startNumberRealisation = ref(4)
-        const lastRealisation        = ref()
+const startNumberRealisation = ref(4)
+const lastRealisation        = ref()
 
-        /**
-         *
-         * @param event
-         */
-        const moreData = (event) => {
-            if (startNumberRealisation.value > getDataRealisationsLimited.value.length) return
-            limitUp()
-        }
-
-        /**
-         *
-         * @param event
-         */
-        const lessData = (event) => {
-            if (startNumberRealisation.value >= getDataRealisationsLimited.value.length) return
-            limitDown()
-
-            setTimeout(() => {
-                if (!lastRealisation.value.length) return
-
-                window.scrollTo({
-                    top: positionY(lastRealisation.value[0]),
-                    behavior: 'smooth'
-                })
-            }, 50)
-        }
-
-        onUpdated(() => {
-            Appear()
-            SlideFromTop()
-        })
-
-        return {
-            getDataRealisationsLimited,
-            moreData,
-            lessData,
-            getLimit,
-            startNumberRealisation,
-            getSectionRealisations,
-            getDataTranslations,
-            lastRealisation,
-        }
-    }
+/**
+ *
+ * @param event
+ */
+const moreData = (event) => {
+    if (startNumberRealisation.value > getDataRealisationsLimited.value.length) return
+    limitUp()
 }
+
+/**
+ *
+ * @param event
+ */
+const lessData = (event) => {
+    if (startNumberRealisation.value >= getDataRealisationsLimited.value.length) return
+    limitDown()
+
+    setTimeout(() => {
+        if (!lastRealisation.value.length) return
+
+        window.scrollTo({
+            top: positionY(lastRealisation.value[0]),
+            behavior: 'smooth'
+        })
+    }, 50)
+}
+
+onUpdated(() => {
+    Appear()
+    SlideFromTop()
+})
+
+await useAsyncData(
+    'realisations',
+    () => $fetch(API_URL + 'realisations?populate=image')
+).then(res => {
+    const data = res.data.value.data
+        .map(({ attributes }) => attributes)
+        .sort((a, b) => a.position - b.position)
+    fetchDataRealisations(data)
+})
 </script>

@@ -22,31 +22,23 @@
     </div>
 </template>
 
-<script>
-import { ref } from 'vue'
+<script setup>
 import useStore from '../store'
+import { API_URL } from '../api/api'
 
-export default {
-    name: 'Contact',
-    setup () {
-        const { getDataContact, getSectionContact } = useStore.contact()
-        const { getDataTranslations } = useStore.translations()
+const { fetchDataContact, getDataContact, getSectionContact } = useStore.contact()
+const { getDataTranslations }                                 = useStore.translations()
 
-        const imageObject = ref('')
+/**
+ *
+ * @param event
+ */
+const redirectToMail = (event) => window.location.href = `mailto:${ getDataContact.value.mail }`
 
-        /**
-         *
-         * @param event
-         */
-        const redirectToMail = (event) => window.location.href = `mailto:${ getDataContact.value.mail }`
-
-        return {
-            getDataContact,
-            getSectionContact,
-            getDataTranslations,
-            imageObject,
-            redirectToMail,
-        }
-    }
-}
+await useAsyncData(
+    'contact',
+    () => $fetch(API_URL + 'contact')
+).then(res => {
+    fetchDataContact(res.data.value.data.attributes)
+})
 </script>

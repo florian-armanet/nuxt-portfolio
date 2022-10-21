@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3760034-b84d-44ac-afd1-2dbd7c3d0e3e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/2-components/_components-loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/2-components/_components-loader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/Main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Contact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Experiences.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Experiences.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Realisations/Realisations.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Realisations/Realisations.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Skills/Skills.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Skills/Skills.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/components/Tools.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/components/Tools.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/experiences.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/experiences.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/introduction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/introduction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/loaders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/realisations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/realisations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/sections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/skills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/tools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/app/store/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app/store/translations.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GLMjmwJ9QrwnVdGuLGEzjKT2a6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/farmanet/workspace/nuxt-portfolio/src/js&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/295/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/js" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/plugins" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plugins" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3760034-b84d-44ac-afd1-2dbd7c3d0e3e" name="Changes" comment="" />
+      <created>1666163547101</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666163547101</updated>
+      <workItem from="1666163549115" duration="6660000" />
+      <workItem from="1666179307109" duration="5142000" />
+      <workItem from="1666250812823" duration="2750000" />
+      <workItem from="1666265601956" duration="10994000" />
+      <workItem from="1666335885344" duration="1525000" />
+      <workItem from="1666339610329" duration="2242000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

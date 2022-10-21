@@ -5,6 +5,8 @@
 // -----------------------------------------------------------------------------
 
 
+// 1. Loading
+// ------------------------------------------------------
 .Loader {
     @apply inline-block relative;
     width: 80px;
@@ -59,3 +61,32 @@
     }
 }
 
+// 2. Loader block
+// ------------------------------------------------------
+.Loader-block {
+    background: theme('colors.secondary.lighter');
+    background: linear-gradient(
+                    100deg,
+                    rgba(255, 255, 255, 0) 40%,
+                    rgba(14, 22, 70, 0.52) 50%,
+                    rgba(255, 255, 255, 0) 60%
+    ) theme('colors.secondary.lighter');
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s bg-loading ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bg-loading {
+    to {
+        background-position-x: -20%;
+    }
+}

@@ -14,7 +14,8 @@
                 <div class="js-appear-defer-child o-col-12 md:o-col-7 flex flex-col justify-center sm-down:order-2">
                     <p class="">{{ getDataAbout.text }}</p>
                 </div>
-                <div class="js-appear-defer-child o-col-12 md:o-col-5 sm-down:flex-flow-center sm-down:mb-2 sm-down:order-1">
+                <div
+                    class="js-appear-defer-child o-col-12 md:o-col-5 sm-down:flex-flow-center sm-down:mb-2 sm-down:order-1">
                     <img :src="getImageObject?.url"
                          :alt="getImageObject?.name"
                          class="rounded-full border-4 border-primary-base w-32 md:w-64 h-32 md:h-64 mb-4">
@@ -24,19 +25,18 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import useStore from '../store'
+import { API_URL } from '../api/api'
 
-export default {
-    name: 'About',
-    setup () {
-        const { getDataAbout, getSectionAbout, getImageObject } = useStore.about()
+const { fetchDataAbout, getDataAbout, getSectionAbout, getImageObject, setImageObject, setPdfObject } = useStore.about()
 
-        return {
-            getDataAbout,
-            getSectionAbout,
-            getImageObject,
-        }
-    }
-}
+await useAsyncData(
+    'about',
+    () => $fetch(API_URL + 'about?populate=image,pdf')
+).then(res => {
+    fetchDataAbout(res.data.value.data.attributes)
+    setImageObject(getDataAbout.value?.image?.data?.attributes || null)
+    setPdfObject(getDataAbout.value?.pdf?.data?.attributes || null)
+})
 </script>
