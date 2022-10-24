@@ -21,5 +21,5 @@ export default defineNuxtConfig({
         "@/src/css/tailwind.scss",
         "@/src/css/app.scss",
     ],
-    // target: 'static',
+    target: 'static',
 })

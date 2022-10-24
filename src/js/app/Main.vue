@@ -1,15 +1,17 @@
 <template>
-    <Menu/>
-    <Header/>
+    <div>
+        <Menu/>
+        <Header/>
 
-    <main>
-        <Skills/>
-        <Tools/>
-        <Experiences/>
-        <Realisations/>
-        <About/>
-        <Contact/>
-    </main>
+        <main>
+            <Skills/>
+            <Tools/>
+            <Experiences/>
+            <Realisations/>
+            <About/>
+            <Contact/>
+        </main>
+    </div>
 </template>
 
 <script setup>
@@ -24,7 +26,7 @@ import Contact from './components/Contact.vue'
 import useStore from './store'
 import { API_URL } from './api/api'
 
-const { fetchDataSections } = useStore.sections()
+const { fetchDataSections }     = useStore.sections()
 const { fetchDataTranslations } = useStore.translations()
 
 await useAsyncData(

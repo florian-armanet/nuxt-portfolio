@@ -1,0 +1,16 @@
+/*
+ * [ base / default ]
+ */
+
+// -----------------------------------------------------------------------------
+
+.App {
+    background-color: #eeeeee;
+    @apply text-base text-secondary-base;
+    min-height: 100vh;
+}
+
+.App-logo {
+    height: 20vmin;
+    @apply mx-auto;
+}
