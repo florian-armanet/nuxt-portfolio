@@ -1,7 +1,7 @@
-import { computed, ref } from 'vue'
+import { computed, reactive } from 'vue'
 import useStore from './index'
 
-const state = ref({
+const state = reactive({
     dataContact: {}
 })
 
@@ -18,7 +18,7 @@ export default () => {
     /**
      *
      */
-    const getDataContact = computed(() => state.value.dataContact)
+    const getDataContact = computed(() => state.dataContact)
 
     /**
      *

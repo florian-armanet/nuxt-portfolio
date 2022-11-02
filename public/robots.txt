@@ -1,5 +1,2 @@
-User-Agent: *
-Disallow: /pages/
-
 User-agent: *
 Sitemap: https://www.florian-armanet.fr/sitemap.xml
