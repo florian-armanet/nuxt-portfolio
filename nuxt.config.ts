@@ -17,6 +17,7 @@ export default defineNuxtConfig({
         {src: '~/plugins/animations/appear-opacity.js', mode: 'client'},
         {src: '~/plugins/animations/appear-stagger.js', mode: 'client'},
         {src: '~/plugins/animations/slide-from-top.js', mode: 'client'},
+        {src: '~/plugins/lazyload.js', mode: 'client'},
     ],
     css: [
         "@/src/css/tailwind.scss",

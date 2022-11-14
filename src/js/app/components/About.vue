@@ -16,9 +16,9 @@
                 </div>
                 <div
                     class="js-appear-defer-child o-col-12 md:o-col-5 sm-down:flex-flow-center sm-down:mb-2 sm-down:order-1">
-                    <img :src="getImageObject?.url"
+                    <img :data-src="getImageObject?.url"
                          :alt="getImageObject?.name"
-                         class="rounded-full border-4 border-primary-base w-32 md:w-64 h-32 md:h-64 mb-4">
+                         class="lazyload rounded-full border-4 border-primary-base w-32 md:w-64 h-32 md:h-64 mb-4">
                 </div>
             </div>
         </div>
