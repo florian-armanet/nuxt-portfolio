@@ -4,7 +4,6 @@ export default defineNuxtConfig({
         postcss: {
             postcssOptions: require('./postcss.config.js'),
         },
-        extractCSS: true
     },
     plugins: [
         {src: '~/plugins/main.js', mode: 'client'},
