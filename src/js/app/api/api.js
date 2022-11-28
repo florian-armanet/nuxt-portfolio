@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useAsyncData } from 'nuxt/app'
 
 // export const URL     = 'http://localhost:1337'
-// export const API_URL = 'http://localhost:1337/api/'
-export const API_URL = 'https://warm-peak-82519.herokuapp.com/api/'
+export const API_URL = 'http://localhost:1337/api/'
+// export const API_URL = 'https://warm-peak-82519.herokuapp.com/api/'
 
 
 /**

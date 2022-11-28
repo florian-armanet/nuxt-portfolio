@@ -11,11 +11,11 @@ const animationCallback = (entry) => {
     })
 }
 
-export default () => {
+export default defineNuxtPlugin((nuxtApp) => {
     const elementsAppearing = document.querySelectorAll('.js-appear-stagger')
     processObserver({
         callback: animationCallback,
         elementsObserved: elementsAppearing,
         options: { root: null, rootMargin: rootMarginValue() }
     })
-}
+})

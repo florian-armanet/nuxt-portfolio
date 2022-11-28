@@ -10,11 +10,11 @@ const animationCallback = (entry) => {
     })
 }
 
-export default () => {
+export default defineNuxtPlugin((nuxtApp) => {
     const elementsAppearing = document.querySelectorAll('.js-appear-opacity')
     processObserver({
         callback: animationCallback,
         elementsObserved: elementsAppearing,
         options: { root: null, rootMargin: isTablet() ? '-100px' : '-200px' },
     })
-}
+})

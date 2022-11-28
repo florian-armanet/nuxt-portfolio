@@ -10,7 +10,7 @@ const animationCallback = (entry) => {
     })
 }
 
-export default () => {
+export default defineNuxtPlugin((nuxtApp) => {
     if (isTablet()) return
 
     const elementsAppearing = document.querySelectorAll('.js-slide-from-top, .js-slide-from-bottom')
@@ -19,4 +19,4 @@ export default () => {
         elementsObserved: elementsAppearing,
         options: { root: null, rootMargin: '-50px' },
     })
-}
+})

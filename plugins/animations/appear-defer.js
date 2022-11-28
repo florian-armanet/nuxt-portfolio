@@ -14,11 +14,11 @@ const animationCallback = (entry) => {
     })
 }
 
-export default () => {
+export default defineNuxtPlugin((nuxtApp) => {
     const elementsAppearing = document.querySelectorAll('.js-appear-defer')
     processObserver({
         callback: animationCallback,
         elementsObserved: elementsAppearing,
         options: { root: null, rootMargin: rootMarginValue() },
     })
-}
+})
