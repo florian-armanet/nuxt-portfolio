@@ -18,6 +18,7 @@
          :class="[index % 2 === 0 ? 'lg:translate-x-16' : 'lg:-translate-x-16']">
         <div class="js-slide-from-top lg-down:p-4 lg:p-10 bg-secondary-lighter lg:max-w-96 w-full">
             <a :href="realisation.url"
+               target="_blank"
                class="Title Title--2xl block mb-4 font-bold">
                 {{ realisation.name }}
             </a>
