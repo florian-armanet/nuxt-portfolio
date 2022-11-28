@@ -4,7 +4,7 @@
        class="js-slide-from-bottom flex-1 max-h-[550px] h-full max-w-[940px] w-full z-0 relative overflow-hidden group"
        target="_blank"
        rel="noopener">
-        <img :data-src="realisation?.image?.data?.attributes?.caption"
+        <img src="/loading.png" :data-src="realisation?.image?.data?.attributes?.caption"
              :alt="realisation.name" class="lazyload z-1 relative">
         <span
             class="z-2 absolute inset-0 bg-secondary-base/10 group-hover:bg-secondary-base/0 transition-fast"></span>

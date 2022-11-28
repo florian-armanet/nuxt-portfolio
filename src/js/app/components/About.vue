@@ -16,7 +16,7 @@
                 </div>
                 <div
                     class="js-appear-defer-child o-col-12 md:o-col-5 sm-down:flex-flow-center sm-down:mb-2 sm-down:order-1">
-                    <img :data-src="getImageObject?.caption"
+                    <img src="/loading.png" :data-src="getImageObject?.caption"
                          :alt="getImageObject?.name"
                          class="lazyload rounded-full border-4 border-primary-base w-32 md:w-64 h-32 md:h-64 mb-4">
                 </div>
