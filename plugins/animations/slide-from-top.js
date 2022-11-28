@@ -4,7 +4,7 @@ import { isTablet } from '../common/utils/viewport'
 
 const animationCallback = (entry) => {
     gsap.to(entry.target, {
-        duration: entry.target.dataset.animationSpeed ?? 2,
+        duration: entry.target.dataset.animationSpeed ?? 1.5,
         delay: Number(entry.target.dataset.animationDelay) ?? 0,
         transform: 'translateY(0)',
     })

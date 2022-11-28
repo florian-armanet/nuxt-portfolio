@@ -1,7 +1,7 @@
 <template>
     <span v-if="index === getDataRealisationsLimited.length -1" ref="lastRealisation" class="self-start"></span>
     <a :href="realisation.url"
-       class="flex-1 max-h-[550px] h-full max-w-[940px] w-full z-0 relative overflow-hidden group"
+       class="js-slide-from-bottom flex-1 max-h-[550px] h-full max-w-[940px] w-full z-0 relative overflow-hidden group"
        target="_blank"
        rel="noopener">
         <img :data-src="realisation?.image?.data?.attributes?.caption"
@@ -16,7 +16,7 @@
 
     <div class="transform"
          :class="[index % 2 === 0 ? 'lg:translate-x-16' : 'lg:-translate-x-16']">
-        <div class="lg-down:p-4 lg:p-10 bg-secondary-lighter lg:max-w-96 w-full">
+        <div class="js-slide-from-top lg-down:p-4 lg:p-10 bg-secondary-lighter lg:max-w-96 w-full">
             <a :href="realisation.url"
                class="Title Title--2xl block mb-4 font-bold">
                 {{ realisation.name }}
