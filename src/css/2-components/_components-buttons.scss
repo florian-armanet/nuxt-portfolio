@@ -14,3 +14,96 @@
         @apply py-2 px-4;
     }
 }
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+    transition: $property $duration $ease;
+}
+
+.Button-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+
+    width: 12rem;
+    height: auto;
+
+    .Button-link-circle {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        @apply bg-primary-base;
+        border-radius: 1.625rem;
+
+        .Button-link-icon {
+            @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            @apply bg-white;
+
+            &.arrow {
+                @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+                left: 6px;
+                width: 1.125rem;
+                height: 0.125rem;
+                @apply bg-transparent;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: -0.25rem;
+                    right: -0.07rem;
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    border-top: 0.125rem solid theme('colors.secondary.base');
+                    border-right: 0.125rem solid theme('colors.secondary.base');
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .Button-link-text {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        @apply text-primary-base;
+        font-weight: 700;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    &:hover {
+        .Button-link-circle {
+            width: 100%;
+
+            .Button-link-icon {
+                &.arrow {
+                    @apply bg-secondary-base;
+                    transform: translate(1rem, 0);
+                }
+            }
+        }
+
+        .Button-link-text {
+            @apply text-secondary-base;
+        }
+    }
+}

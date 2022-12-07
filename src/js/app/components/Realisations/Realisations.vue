@@ -11,13 +11,6 @@
             </div>
         </div>
 
-<!--        <div class="js-appear flex-flow-center mb-12">-->
-<!--            <a href="/react/react.html" target="_blank" class="Button m-4 lg:flex-flow-center lg-down:text-center">-->
-<!--                <span class="leading-none">Voir mon application React</span>-->
-<!--                <i class="Icon-arrow-right text-xl font-bold ml-4"></i>-->
-<!--            </a>-->
-<!--        </div>-->
-
         <div v-for="(realisation, index) in getDataRealisationsLimited"
              :key="index"
              class="flex lg-down:flex-col lg:flex-flow-center js-appear relative mb-12 lg:mb-24 lg-down:mx-4"
@@ -35,10 +28,6 @@
                     @click="lessData">
                 {{ getDataTranslations.see_less }}
             </button>
-<!--            <a href="/react/react.html" target="_blank" class="Button Button&#45;&#45;small m-4 lg:flex-flow-center lg-down:text-center">-->
-<!--                <span class="leading-none">Voir mon application React</span>-->
-<!--                <i class="Icon-arrow-right text-xl font-bold ml-4"></i>-->
-<!--            </a>-->
         </div>
     </div>
 </template>

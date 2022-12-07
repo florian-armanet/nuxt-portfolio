@@ -19,7 +19,7 @@
         <div class="js-slide-from-top lg-down:p-4 lg:p-10 bg-secondary-lighter lg:max-w-96 w-full">
             <a :href="realisation.url"
                target="_blank"
-               class="Title Title--2xl block mb-4 font-bold">
+               class="Title Title--2xl block mb-4 font-bold transition-fast hover:text-primary-hover">
                 {{ realisation.name }}
             </a>
 
@@ -29,6 +29,22 @@
                     {{ tag }}
                 </li>
             </ul>
+
+            <a :href="realisation.url"
+               target="_blank"
+               class="Button-link mt-4">
+                <span class="Button-link-circle" aria-hidden="true">
+                  <span class="Button-link-icon arrow"></span>
+                </span>
+                <span class="Button-link-text">{{ getDataTranslations.see_website }}</span>
+            </a>
+
+            <!--            <button class="Button-link">-->
+            <!--                <span class="Button-link-circle" aria-hidden="true">-->
+            <!--                  <span class="Button-link-circle-arrow"></span>-->
+            <!--                </span>-->
+            <!--                <span class="Button-link-text">Learn More</span>-->
+            <!--            </button>-->
         </div>
     </div>
 </template>
@@ -37,6 +53,7 @@
 import useStore from '../../store'
 
 const { getDataRealisationsLimited } = useStore.realisations()
+const { getDataTranslations }        = useStore.translations()
 
 const props                  = defineProps({
     realisation: Object,
