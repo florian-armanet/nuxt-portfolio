@@ -24,11 +24,10 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
-import { processObserver } from '../../../../../plugins/common/utils/intersectionObserver'
+import { processObserver } from '~/plugins/common/utils/intersectionObserver'
 import Skill from './Skill.vue'
 import useStore from '../../store'
 import { API_URL } from '../../api/api'
-import appearOpacity from '../../../../../plugins/animations/appear-opacity'
 
 const { getDataSkills, getSectionSkills, fetchDataSkills } = useStore.skills()
 

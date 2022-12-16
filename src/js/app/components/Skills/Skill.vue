@@ -9,7 +9,7 @@
         </transition>
         <p class="w-40 mr-4 sm:line-clamp-1 sm-down:w-full">{{ skillName }}</p>
         <p class="relative flex-1 mr-4 h-3">
-            <span class="absolute top-0 left-0 bg-gradient-to-r from-primary-dark to-primary-base h-full w-0 js-score-value"></span>
+            <span class="absolute top-0 left-0 bg-gradient-to-r from-primary-dark to-primary-base h-full w-0 js-score-value rounded-xl"></span>
         </p>
         <span class="">{{ skillValue }}%</span>
     </li>
