@@ -23,7 +23,7 @@
                 {{ realisation.name }}
             </a>
 
-            <ul class="flex flex-wrap">
+            <ul v-if="realisation?.tags && realisation.tags.length" class="flex flex-wrap">
                 <li v-for="tag in realisation.tags.filter(rea => rea)"
                     class="px-2 py-1 mr-2 mb-2 border border-primary-base rounded lg:text-sm">
                     {{ tag }}
@@ -32,6 +32,7 @@
 
             <a :href="realisation.url"
                target="_blank"
+               rel="noopener"
                class="Button-link mt-4">
                 <span class="Button-link-circle" aria-hidden="true">
                   <span class="Button-link-icon arrow"></span>
