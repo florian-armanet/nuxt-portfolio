@@ -120,3 +120,14 @@ export const ApiFetchDataContact = async () => {
 
     return res.data.data.attributes
 }
+
+/**
+ *
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export const ApiFetchDataFooter = async () => {
+    const res = await axios.get(API_URL + 'footer')
+
+    return res.data.data.attributes
+}

@@ -10,6 +10,7 @@
             <Realisations/>
             <About/>
             <Contact/>
+            <Footer/>
         </main>
     </div>
 </template>
@@ -23,6 +24,7 @@ import Realisations from './components/Realisations/Realisations.vue'
 import Menu from './components/Menu.vue'
 import About from './components/About.vue'
 import Contact from './components/Contact.vue'
+import Footer from './components/Footer.vue'
 import useStore from './store'
 import { API_URL } from './api/api'
 

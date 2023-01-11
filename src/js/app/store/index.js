@@ -7,6 +7,7 @@ import realisations from './realisations'
 import experiences from './experiences'
 import about from './about'
 import contact from './contact'
+import footer from './footer'
 
 export default {
     translations,
@@ -18,4 +19,5 @@ export default {
     experiences,
     about,
     contact,
+    footer,
 }

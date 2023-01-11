@@ -18,7 +18,6 @@
             </a>
         </div>
 
-        <p class="max-w-sm w-full mx-auto text-center p-4">{{ getDataTranslations.portfolio_development_details }}</p>
     </div>
 </template>
 
@@ -27,7 +26,6 @@ import useStore from '../store'
 import { API_URL } from '../api/api'
 
 const { fetchDataContact, getDataContact, getSectionContact } = useStore.contact()
-const { getDataTranslations }                                 = useStore.translations()
 
 /**
  *
