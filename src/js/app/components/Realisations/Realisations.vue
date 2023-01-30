@@ -37,7 +37,7 @@ import { onUpdated, ref } from 'vue'
 import useStore from '../../store'
 import Appear from '../../../../../plugins/animations/appear'
 import SlideFromTop from '../../../../../plugins/animations/slide-from-top'
-import { positionY } from '../../../../../plugins/common/utils/positionY'
+// import { positionY } from '../../../../../plugins/common/utils/positionY'
 import Realisation from './Realisation.vue'
 import { API_URL } from '../../api/api'
 
@@ -53,7 +53,6 @@ const {
 const { getDataTranslations } = useStore.translations()
 
 const startNumberRealisation = ref(4)
-const lastRealisation        = ref()
 
 /**
  *
@@ -71,15 +70,6 @@ const moreData = (event) => {
 const lessData = (event) => {
     if (startNumberRealisation.value >= getDataRealisationsLimited.value.length) return
     limitDown()
-
-    setTimeout(() => {
-        if (!lastRealisation.value.length) return
-
-        window.scrollTo({
-            top: positionY(lastRealisation.value[0]),
-            behavior: 'smooth'
-        })
-    }, 50)
 }
 
 onUpdated(() => {

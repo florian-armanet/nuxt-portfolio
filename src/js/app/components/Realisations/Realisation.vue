@@ -1,5 +1,4 @@
 <template>
-    <span v-if="index === getDataRealisationsLimited.length -1" ref="lastRealisation" class="self-start"></span>
     <a :href="realisation.url"
        class="js-slide-from-bottom flex-1 max-h-[550px] h-full max-w-[940px] w-full z-0 relative overflow-hidden group"
        target="_blank"
@@ -39,13 +38,6 @@
                 </span>
                 <span class="Button-link-text">{{ getDataTranslations.see_website }}</span>
             </a>
-
-            <!--            <button class="Button-link">-->
-            <!--                <span class="Button-link-circle" aria-hidden="true">-->
-            <!--                  <span class="Button-link-circle-arrow"></span>-->
-            <!--                </span>-->
-            <!--                <span class="Button-link-text">Learn More</span>-->
-            <!--            </button>-->
         </div>
     </div>
 </template>
@@ -53,7 +45,6 @@
 <script setup>
 import useStore from '../../store'
 
-const { getDataRealisationsLimited } = useStore.realisations()
 const { getDataTranslations }        = useStore.translations()
 
 const props                  = defineProps({
