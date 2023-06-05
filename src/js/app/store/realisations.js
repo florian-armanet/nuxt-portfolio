@@ -1,10 +1,10 @@
 import { computed, ref } from 'vue'
 import useStore from './index'
+import { LIMIT_STEP } from '~/src/js/app/constants'
 
 const state = ref({
     dataRealisations: [],
     limit: 4,
-    limitStep: 4,
 })
 
 export default () => {
@@ -35,12 +35,12 @@ export default () => {
     /**
      *
      */
-    const limitUp = () => state.value.limit = state.value.limit + state.value.limitStep
+    const incrementLimit = () => state.value.limit = state.value.limit + LIMIT_STEP
 
     /**
      *
      */
-    const limitDown = () => state.value.limit = state.value.limit - state.value.limitStep
+    const decrementLimit = () => state.value.limit = state.value.limit - LIMIT_STEP
 
     /**
      *
@@ -52,8 +52,8 @@ export default () => {
         getDataRealisations,
         getSectionRealisations,
         getLimit,
-        limitUp,
-        limitDown,
+        incrementLimit,
+        decrementLimit,
         getDataRealisationsLimited,
     }
 }

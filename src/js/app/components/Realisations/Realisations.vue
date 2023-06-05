@@ -19,12 +19,13 @@
         </div>
 
         <div class="flex-flow-center">
-            <button class="m-4 Button Button--small" v-show="getLimit <= getDataRealisationsLimited.length"
+            <button class="m-4 Button Button--small"
+                    v-show="getLimit < getDataRealisations.length"
                     @click="moreData">
                 {{ getDataTranslations.see_more }}
             </button>
             <button class="m-4 Button Button--small"
-                    v-show="getDataRealisationsLimited.length > startNumberRealisation"
+                    v-show="getDataRealisationsLimited.length > START_NUMBER_REALISATION"
                     @click="lessData">
                 {{ getDataTranslations.see_less }}
             </button>
@@ -33,34 +34,34 @@
 </template>
 
 <script setup>
-import { onUpdated, ref } from 'vue'
+import { onUpdated } from 'vue'
 import useStore from '../../store'
 import Appear from '../../../../../plugins/animations/appear'
 import SlideFromTop from '../../../../../plugins/animations/slide-from-top'
 // import { positionY } from '../../../../../plugins/common/utils/positionY'
 import Realisation from './Realisation.vue'
 import { API_URL } from '../../api/api'
+import { START_NUMBER_REALISATION } from '~/src/js/app/constants'
 
 const {
           fetchDataRealisations,
+          getDataRealisations,
           getDataRealisationsLimited,
           getSectionRealisations,
           getLimit,
-          limitUp,
-          limitDown
+          incrementLimit,
+          decrementLimit
       } = useStore.realisations()
 
 const { getDataTranslations } = useStore.translations()
-
-const startNumberRealisation = ref(4)
 
 /**
  *
  * @param event
  */
 const moreData = (event) => {
-    if (startNumberRealisation.value > getDataRealisationsLimited.value.length) return
-    limitUp()
+    if (getLimit.value >= getDataRealisations.value.length) return
+    incrementLimit()
 }
 
 /**
@@ -68,8 +69,8 @@ const moreData = (event) => {
  * @param event
  */
 const lessData = (event) => {
-    if (startNumberRealisation.value >= getDataRealisationsLimited.value.length) return
-    limitDown()
+    if (START_NUMBER_REALISATION >= getDataRealisationsLimited.value.length) return
+    decrementLimit()
 }
 
 onUpdated(() => {
