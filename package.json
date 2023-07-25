@@ -10,6 +10,7 @@
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
+        "@emailjs/browser": "^3.11.0",
         "@nuxt/postcss8": "^1.1.3",
         "@studio-freight/lenis": "^0.2.26",
         "axios": "^0.27.2",

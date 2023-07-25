@@ -1,0 +1,23 @@
+/*
+ * [ components / input ]
+ */
+
+// -----------------------------------------------------------------------------
+
+
+@layer components {
+    .Input {
+        @apply bg-secondary-hover my-2 border-2 border-secondary-light rounded px-4 py-2 placeholder:font-normal placeholder:text-tertiary-hover text-primary-base font-bold;
+
+        &:focus {
+            @apply border-primary-hover;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus, {
+            -webkit-box-shadow: 0 0 0 1000px theme('colors.secondary.hover') inset;
+            -webkit-text-fill-color: theme('colors.primary.base');
+        }
+    }
+}

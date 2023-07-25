@@ -13,6 +13,10 @@
     .Button--small {
         @apply py-2 px-4;
     }
+
+    .Button--disabled {
+        @apply cursor-not-allowed shadow-none from-gray-200 to-gray-200;
+    }
 }
 
 @mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
