@@ -39,4 +39,9 @@ Locally preview production build:
 npm run preview
 ```
 
+Magic command:
+```
+npm run build && npm run generate && npm run preview
+```
+
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
