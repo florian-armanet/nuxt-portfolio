@@ -1,5 +1,5 @@
-import Main from '../../src/js/app/Main.vue'
-import PageNotFound from '../../src/js/app/components/PageNotFound.vue'
+import Main from '../../assets/js/app/Main.vue'
+import PageNotFound from '../../assets/js/app/components/PageNotFound.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [

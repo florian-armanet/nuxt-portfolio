@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import Main from '../src/js/app/Main'
+import Main from '../assets/js/app/Main'
 </script>

@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import useStore from './src/js/app/store'
+import useStore from './assets/js/app/store'
 
 const props = defineProps({
     error: Object

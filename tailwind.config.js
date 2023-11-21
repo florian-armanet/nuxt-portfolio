@@ -6,7 +6,7 @@ module.exports = {
     plugins: [],
     corePlugins,
     content: [
-        "./src/**/*.{html,js,vue,js,jsx,ts}",
+        "./assets/**/*.{html,js,vue,js,jsx,ts}",
         "./layouts/**/*.vue",
         "./pages/**/*.vue",
         "./plugins/**/*.{js,ts}",

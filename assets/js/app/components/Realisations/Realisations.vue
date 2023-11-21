@@ -41,7 +41,7 @@ import SlideFromTop from '../../../../../plugins/animations/slide-from-top'
 // import { positionY } from '../../../../../plugins/common/utils/positionY'
 import Realisation from './Realisation.vue'
 import { API_URL } from '../../api/api'
-import { START_NUMBER_REALISATION } from '~/src/js/app/constants'
+import { START_NUMBER_REALISATION } from '~/assets/js/app/constants'
 
 const {
           fetchDataRealisations,

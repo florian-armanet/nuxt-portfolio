@@ -49,7 +49,7 @@ import useStore from '../store'
 import { API_URL } from '../api/api'
 import emailjs from '@emailjs/browser'
 import { ref } from 'vue'
-import { CONTACT } from '~/src/js/app/constants'
+import { CONTACT } from '~/assets/js/app/constants'
 
 const { fetchDataContact, getDataContact, getSectionContact } = useStore.contact()
 const { getDataTranslations }                                 = useStore.translations()

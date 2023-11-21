@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 import useStore from './index'
-import { LIMIT_STEP } from '~/src/js/app/constants'
+import { LIMIT_STEP } from '~/assets/js/app/constants'
 
 const state = ref({
     dataRealisations: [],
