@@ -17,10 +17,6 @@ import { API_URL } from '../api/api'
 
 const { fetchDataTools, getDataTools } = useStore.tools()
 
-await useAsyncData(
-    'tool',
-    () => $fetch(API_URL + 'tool')
-).then(res => {
-    fetchDataTools(res.data.value.data.attributes)
-})
+const { data: { value: { data: dataTools } } } = await useAsyncData('tool', () => $fetch(API_URL + 'tool'))
+fetchDataTools(dataTools.attributes)
 </script>

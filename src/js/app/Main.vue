@@ -31,17 +31,9 @@ import { API_URL } from './api/api'
 const { fetchDataSections }     = useStore.sections()
 const { fetchDataTranslations } = useStore.translations()
 
-await useAsyncData(
-    'section',
-    () => $fetch(API_URL + 'section')
-).then(res => {
-    fetchDataSections(res.data.value.data.attributes.sections)
-})
+const { data: { value: { data: dataSection } } } = await useAsyncData('section', () => $fetch(API_URL + 'section'))
+fetchDataSections(dataSection.attributes.sections)
 
-await useAsyncData(
-    'translation',
-    () => $fetch(API_URL + 'translation')
-).then(res => {
-    fetchDataTranslations(res.data.value.data.attributes.translations)
-})
+const { data: { value: { data: dataTranslation } } } = await useAsyncData('translation', () => $fetch(API_URL + 'translation'))
+fetchDataTranslations(dataTranslation.attributes.translations)
 </script>

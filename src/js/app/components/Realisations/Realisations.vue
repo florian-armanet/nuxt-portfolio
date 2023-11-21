@@ -78,13 +78,11 @@ onUpdated(() => {
     SlideFromTop()
 })
 
-await useAsyncData(
-    'realisations',
-    () => $fetch(API_URL + 'realisations?populate=image')
-).then(res => {
-    const data = res.data.value.data
-        .map(({ attributes }) => attributes)
-        .sort((a, b) => a.position - b.position)
-    fetchDataRealisations(data)
-})
+const { data: { value: { data: dataRealisations } } } = await useAsyncData('realisations', () => $fetch(API_URL + 'realisations?populate=image'))
+
+const data = dataRealisations
+    .map(({ attributes }) => attributes)
+    .sort((a, b) => a.position - b.position)
+
+fetchDataRealisations(data)
 </script>

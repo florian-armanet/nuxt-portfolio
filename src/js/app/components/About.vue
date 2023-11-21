@@ -31,12 +31,8 @@ import { API_URL } from '../api/api'
 
 const { fetchDataAbout, getDataAbout, getSectionAbout, getImageObject, setImageObject, setPdfObject } = useStore.about()
 
-await useAsyncData(
-    'about',
-    () => $fetch(API_URL + 'about?populate=image,pdf')
-).then(res => {
-    fetchDataAbout(res.data.value.data.attributes)
-    setImageObject(getDataAbout.value?.image?.data?.attributes || null)
-    setPdfObject(getDataAbout.value?.pdf?.data?.attributes || null)
-})
+const { data: { value: { data: dataAbout } } } = await useAsyncData('about', () => $fetch(API_URL + 'about?populate=image,pdf'))
+fetchDataAbout(dataAbout.attributes)
+setImageObject(getDataAbout.value?.image?.data?.attributes || null)
+setPdfObject(getDataAbout.value?.pdf?.data?.attributes || null)
 </script>

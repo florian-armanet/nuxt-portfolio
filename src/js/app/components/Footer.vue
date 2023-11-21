@@ -20,10 +20,6 @@ import uppercaseFirstLetter from '~/plugins/common/utils/uppercaseFirstLetter'
 
 const { fetchDataFooter, getDataFooter } = useStore.footer()
 
-await useAsyncData(
-    'footer',
-    () => $fetch(API_URL + 'footer')
-).then(res => {
-    fetchDataFooter(res.data.value.data.attributes)
-})
+const { data: { value: { data: dataFooter } } } = await useAsyncData('footer', () => $fetch(API_URL + 'footer'))
+fetchDataFooter(dataFooter.attributes)
 </script>

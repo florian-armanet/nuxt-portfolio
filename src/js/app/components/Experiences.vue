@@ -86,13 +86,11 @@ const onClickItem = (event, position) => {
     tl.play()
 }
 
-await useAsyncData(
-    'experiences',
-    () => $fetch(API_URL + 'experiences')
-).then(res => {
-    const data = res.data.value.data
-        .map(({ attributes }) => attributes)
-        .sort((a, b) => a.position - b.position)
-    fetchDataExperiences(data)
-})
+const { data: { value: { data: dataExperiences } } } = await useAsyncData('experiences', () => $fetch(API_URL + 'experiences'))
+
+const data = dataExperiences
+    .map(({ attributes }) => attributes)
+    .sort((a, b) => a.position - b.position)
+
+fetchDataExperiences(data)
 </script>

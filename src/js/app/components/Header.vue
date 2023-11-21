@@ -23,10 +23,6 @@ import { API_URL } from '../api/api'
 const { fetchDataIntroduction, getDataIntroduction } = useStore.introduction()
 const { getSectionsCode }     = useStore.sections()
 
-await useAsyncData(
-    'introduction',
-    () => $fetch(API_URL + 'introduction')
-).then(res => {
-    fetchDataIntroduction(res.data.value.data.attributes)
-})
+const { data: { value: { data: dataIntroduction } } } = await useAsyncData('introduction', () => $fetch(API_URL + 'introduction'))
+fetchDataIntroduction(dataIntroduction.attributes)
 </script>

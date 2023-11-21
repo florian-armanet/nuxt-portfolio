@@ -70,13 +70,9 @@ const validityForm = computed(() => Object.entries(inputsValues.value).every(([k
     return key && value && email.value.includes('@')
 }))
 
-await useAsyncData(
-    CONTACT,
-    () => $fetch(API_URL + CONTACT)
-).then(res => {
-    fetchDataContact(res.data.value.data.attributes)
-    emailjs.init(getDataContact.value?.emailjs?.public_key)
-})
+const { data: { value: { data: dataContact } } } = await useAsyncData(CONTACT, () => $fetch(API_URL + CONTACT))
+fetchDataContact(dataContact.attributes)
+emailjs.init(getDataContact.value?.emailjs?.public_key)
 
 /**
  *

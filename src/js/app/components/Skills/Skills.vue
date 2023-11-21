@@ -75,11 +75,7 @@ onMounted(() => {
     processAnimation()
 })
 
-await useAsyncData(
-    'skill',
-    () => $fetch(API_URL + 'skill')
-).then(res => {
-    fetchDataSkills(res.data.value.data.attributes.skills)
-    loaded.value = true
-})
+const { data: { value: { data: dataSkills } } } = await useAsyncData('skill', () => $fetch(API_URL + 'skill'))
+fetchDataSkills(dataSkills.attributes.skills)
+loaded.value = true
 </script>
