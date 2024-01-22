@@ -19,6 +19,7 @@ export default defineNuxtConfig({
         {src: '~/plugins/animations/slide-from-top.js', mode: 'client'},
         {src: '~/plugins/scroll-smooth.js', mode: 'client'},
         {src: '~/plugins/lazyload.js', mode: 'client'},
+        {src: '~/plugins/error-handler.js', mode: 'client'},
     ],
     css: [
         "@/assets/css/tailwind.scss",

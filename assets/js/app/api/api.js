@@ -5,7 +5,6 @@ import { useAsyncData } from 'nuxt/app'
 export const API_URL = 'http://localhost:1337/api/'
 // export const API_URL = 'https://warm-peak-82519.herokuapp.com/api/'
 
-
 /**
  *
  * @returns {Promise<*>}
@@ -33,19 +32,11 @@ export const ApiFetchDataIntroduction = async () => {
  * @returns {Promise<*>}
  * @constructor
  */
-// export const ApiFetchDataSkills = async () => {
-//     const res = await axios.get(API_URL + 'skill')
-//
-//     return res.data.data.attributes.skills
-// }
-
 export const ApiFetchDataSkills = async () => {
     const res = await useAsyncData(
         'skill',
         () => $fetch(API_URL + 'skill')
     )
-
-    console.log(res.data);
 
     return res.data.data.attributes.skills
 }
@@ -128,6 +119,5 @@ export const ApiFetchDataContact = async () => {
  */
 export const ApiFetchDataFooter = async () => {
     const res = await axios.get(API_URL + 'footer')
-
     return res.data.data.attributes
 }
