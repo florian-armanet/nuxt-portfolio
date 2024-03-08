@@ -8,11 +8,11 @@ const nuxtApp = useNuxtApp()
 useHead({
     charset: 'utf-8',
     viewport: 'width=device-width, initial-scale=1.0',
-    title: 'Florian Armanet - Développeur Front-end',
+    title: 'Florian Armanet - Développeur Front-end indépendant',
     meta: [
         {
             name: 'description',
-            content: 'Je m\'appelle Florian Armanet. Je suis développeur Front-end. Mes compétences se concentrent sur le Javascript et le CSS.'
+            content: 'Je m\'appelle Florian Armanet. Je suis développeur Front-end indépendant. Mes compétences se concentrent sur le Javascript, Vue.js, React et le CSS.'
         }
     ],
     htmlAttrs: {

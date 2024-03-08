@@ -33,12 +33,19 @@
         </template>
 
         <div class="flex-flow-center mb-20">
-            <a :href="getDataContact.linkedin"
+            <a v-if="getDataContact?.linkedin" :href="getDataContact.linkedin"
                target="_blank"
-               class="block transition-fast hover:-translate-y-1"
+               class="block transition-fast hover:-translate-y-1 mx-3"
                rel="noopener"
                aria-label="Linkedin">
                 <i class="Icon-linkedin text-3xl text-primary-base transition-fast transform hover:text-primary-hover"></i>
+            </a>
+            <a v-if="getDataContact?.github" :href="getDataContact.github"
+               target="_blank"
+               class="block transition-fast hover:-translate-y-1 mx-3"
+               rel="noopener"
+               aria-label="Github">
+                <i class="Icon-github text-3xl text-primary-base transition-fast transform hover:text-primary-hover"></i>
             </a>
         </div>
     </div>
