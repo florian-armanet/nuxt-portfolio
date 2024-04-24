@@ -1,7 +1,7 @@
-import { computed, ref } from 'vue'
+import { computed, reactive } from 'vue'
 import useStore from './index'
 
-const state = ref({
+const state = reactive({
     dataExperiences: [],
     currentPosition: 1
 
@@ -15,12 +15,14 @@ export default () => {
      * @param experiences
      * @returns {*[]}
      */
-    const fetchDataExperiences = (experiences = []) => state.value.dataExperiences = experiences
+    const fetchDataExperiences = (experiences = []) => {
+        state.dataExperiences = experiences
+    }
 
     /**
      *
      */
-    const getDataExperiences = computed(() => state.value.dataExperiences)
+    const getDataExperiences = computed(() => state.dataExperiences)
 
     /**
      *
@@ -37,12 +39,14 @@ export default () => {
     /**
      *
      */
-    const getCurrentPosition = computed(() => state.value.currentPosition)
+    const getCurrentPosition = computed(() => state.currentPosition)
 
     /**
      *
      */
-    const setCurrentPosition = (num) => state.value.currentPosition = num
+    const setCurrentPosition = (num) => {
+        state.currentPosition = num
+    }
 
     /**
      *

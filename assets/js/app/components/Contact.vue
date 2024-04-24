@@ -3,7 +3,7 @@
          class="js-appear-opacity o-container o-container--lg text-tertiary-base py-8"
          data-animation-speed="0.25">
         <div class="flex-flow-centerY sm:flex-flow-center mb-8">
-            <span class="Title Title--6xl text-primary-base leading-none text-tertiary-hover mr-6">
+            <span class="Title Title--6xl leading-none text-tertiary-hover mr-6">
                 0{{ getSectionContact.position }}.
             </span>
             <h2 class="Title">{{ getSectionContact.value }}</h2>

@@ -3,7 +3,7 @@
          class="text-tertiary-base mb-8 sm:mb-16 py-4 sm:py-8">
         <div class="js-appear-opacity o-container o-container--lg">
             <div class="flex-flow-centerY mb-8">
-                <span class="Title Title--6xl text-primary-base leading-none text-tertiary-hover mr-6">
+                <span class="Title Title--6xl leading-none text-tertiary-hover mr-6">
                     0{{ getSectionSkills.position }}.
                 </span>
                 <h2 class="Title">{{ getSectionSkills.value }}</h2>

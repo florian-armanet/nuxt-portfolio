@@ -1,6 +1,6 @@
-import { computed, ref } from 'vue'
+import { computed, reactive } from 'vue'
 
-const state = ref({
+const state = reactive({
     dataTools: {}
 })
 
@@ -10,12 +10,14 @@ export default () => {
      * @param tools
      * @returns {{}}
      */
-    const fetchDataTools = (tools = {}) => state.value.dataTools = tools
+    const fetchDataTools = (tools = {}) => {
+        state.dataTools = tools
+    }
 
     /**
      *
      */
-    const getDataTools = computed(() => state.value.dataTools)
+    const getDataTools = computed(() => state.dataTools)
 
     return {
         fetchDataTools,

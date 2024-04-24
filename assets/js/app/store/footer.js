@@ -13,7 +13,9 @@ export default () => {
      * @param footer
      * @returns {{}}
      */
-    const fetchDataFooter = (footer = {}) => state.dataFooter = footer
+    const fetchDataFooter = (footer = {}) => {
+        state.dataFooter = footer
+    }
 
     /**
      *

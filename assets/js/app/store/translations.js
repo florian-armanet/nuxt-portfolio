@@ -1,6 +1,6 @@
-import { computed, ref } from 'vue'
+import { computed, reactive } from 'vue'
 
-const state = ref({
+const state = reactive({
     dataTranslations: {},
 })
 
@@ -10,12 +10,14 @@ export default () => {
      * @param translations
      * @returns {{}}
      */
-    const fetchDataTranslations = (translations = {}) => state.value.dataTranslations = translations
+    const fetchDataTranslations = (translations = {}) => {
+        state.dataTranslations = translations
+    }
 
     /**
      *
      */
-    const getDataTranslations = computed(() => state.value.dataTranslations)
+    const getDataTranslations = computed(() => state.dataTranslations)
 
     return {
         fetchDataTranslations,

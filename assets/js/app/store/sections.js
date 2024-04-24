@@ -10,7 +10,9 @@ export default () => {
      * @param sections
      * @returns {*[]}
      */
-    const fetchDataSections = (sections = []) => state.dataSections = sections
+    const fetchDataSections = (sections = []) => {
+        state.dataSections = sections
+    }
 
     /**
      *

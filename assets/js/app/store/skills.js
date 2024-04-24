@@ -1,7 +1,7 @@
-import { computed, ref } from 'vue'
+import { computed, reactive } from 'vue'
 import useStore from './index'
 
-const state = ref({
+const state = reactive({
     dataSkills: {}
 })
 
@@ -12,12 +12,14 @@ export default () => {
      *
      * @param skills
      */
-    const fetchDataSkills = (skills) => state.value.dataSkills = skills
+    const fetchDataSkills = (skills) => {
+        state.dataSkills = skills
+    }
 
     /**
      *
      */
-    const getDataSkills = computed(() => state.value.dataSkills)
+    const getDataSkills = computed(() => state.dataSkills)
 
     /**
      *

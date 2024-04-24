@@ -13,7 +13,9 @@ export default () => {
      * @param contact
      * @returns {{}}
      */
-    const fetchDataContact = (contact = {}) => state.dataContact = contact
+    const fetchDataContact = (contact = {}) => {
+        state.dataContact = contact
+    }
 
     /**
      *

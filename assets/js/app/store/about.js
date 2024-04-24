@@ -15,7 +15,9 @@ export default () => {
      * @param about
      * @returns {{}}
      */
-    const fetchDataAbout = (about = {}) => state.dataAbout = about
+    const fetchDataAbout = (about = {}) => {
+        state.dataAbout = about
+    }
 
     /**
      *
